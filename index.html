@@ -76,26 +76,26 @@
       line-height: 1.5;
     }
 
-    /* 隱藏影片畫面 */
-    .video-container {
+    /* 隱藏音樂播放控制欄 */
+    audio {
       display: none;
     }
   </style>
 </head>
 <body>
-  <audio controls autoplay>
-    <source src="videoplayback.webm" type="audio/mpeg">
-    Your browser does not support the audio element.
+  <audio id="birthdayMusic" controls autoplay>
+    <source src="videoplayback.webm" type="audio/webm">
+    您的瀏覽器不支援音頻元素。
   </audio>
   <div class="envelope-container" onclick="this.classList.toggle('open')">
     <div class="cake-background"></div>
     <div class="envelope-flap"></div>
     <div class="envelope-content">
-      <div class="recipient-name">8月生日壽星＆父親節慶祝卡片</div>
-      <h4>生日快樂！</h4>
+      <div class="recipient-name">8月壽星＆父親節快樂</div>
+      <h2>生日快樂！</h2>
       <div class="blessing-message">
         <script>
-          // 這裡使用JavaScript來產生隨機祝福語
+          // 使用 JavaScript 產生隨機生日祝福語
           const blessingMessages = [
             "願你的生日充滿歡樂和笑聲，生日快樂！",
             "祝你生日快樂，願你的每個願望都成真！",
@@ -110,21 +110,15 @@
           document.write(blessingMessages[randomIndex]);
         </script>
       </div>
-      <!-- 影片不顯示畫面 -->
-      <div class="video-container">
-        <iframe width="1" height="1" src="https://www.youtube.com/embed/C0aECv8soHo?autoplay=1&mute=０" frameborder="0" allowfullscreen></iframe>
-      </div>
     </div>
   </div>
   <script>
-    // 在頁面載入後自動播放音樂
-    document.addEventListener('DOMContentLoaded', function () {
-      const audio = document.querySelector('audio');
-      audio.play().then(() => {
-        // 音樂播放成功
-      }).catch((error) => {
-        // 音樂播放失敗
-      });
+    // 自動播放音樂
+    const audio = document.getElementById('birthdayMusic');
+    audio.play().then(() => {
+      // 音樂播放成功
+    }).catch((error) => {
+      // 音樂播放失敗
     });
   </script>
 </body>
