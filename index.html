@@ -83,7 +83,7 @@
   </style>
 </head>
 <body>
-  <audio id="birthdayMusic" controls autoplay>
+  <audio id="birthdayMusic" controls style="display: none;">
     <source src="videoplayback.webm" type="audio/webm">
     您的瀏覽器不支援音頻元素。
   </audio>
@@ -92,10 +92,10 @@
     <div class="envelope-flap"></div>
     <div class="envelope-content">
       <div class="recipient-name">8月壽星＆父親節快樂</div>
-      <h2>生日快樂！</h2>
+      <h4>生日快樂！</h4>
       <div class="blessing-message">
         <script>
-          // 使用 JavaScript 產生隨機生日祝福語
+          // JavaScript程式碼用於生成隨機生日祝福語
           const blessingMessages = [
             "願你的生日充滿歡樂和笑聲，生日快樂！",
             "祝你生日快樂，願你的每個願望都成真！",
@@ -112,14 +112,22 @@
       </div>
     </div>
   </div>
+
+  <button onclick="playBirthdayMusic()">播放音樂</button>
+
   <script>
-    // 自動播放音樂
+    // 隱藏音樂播放控制欄
     const audio = document.getElementById('birthdayMusic');
-    audio.play().then(() => {
-      // 音樂播放成功
-    }).catch((error) => {
-      // 音樂播放失敗
-    });
+    audio.style.display = 'none';
+
+    // 播放音樂
+    function playBirthdayMusic() {
+      audio.play().then(() => {
+        // 音樂播放成功
+      }).catch((error) => {
+        // 音樂播放失敗
+      });
+    }
   </script>
 </body>
 </html>
